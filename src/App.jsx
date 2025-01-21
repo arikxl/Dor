@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import './App.css'  
+import './App.css'
 import Room from './components/Room';
 import LoginButton from './components/LoginButton'
 import ChatInterface from './components/ChatInterface'
@@ -12,26 +12,33 @@ const cookies = new Cookies();
 
 function App() {
   const [room, setRoom] = useState(null);
-  const [isUser, setIsUser] = useState(cookies.get('kidkod-user') );
-  
+  const [isUser, setIsUser] = useState(cookies.get('kidkod-user'));
+
 
   return (
-    <>
+    <main>
       {
         isUser
-          ? room 
+          ? room
             ? <ChatInterface />
-            : <Room setRoom={setRoom} />
-          : <LoginButton setIsUser={setIsUser } />
-      }  
-
+            :
+            <div className="center">
+              <Room setRoom={setRoom} setIsUser={setIsUser} />
+            </div>
+          :
+          <div className="center">
+            <h1>KidKod Chat</h1>
+            <LoginButton setIsUser={setIsUser} />
+          </div>
+      }
 
       <LogoutButton setRoom={setRoom} setIsUser={setIsUser} />
 
-      
 
 
-    </>
+
+
+    </main>
   )
 }
 
