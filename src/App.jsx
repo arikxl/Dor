@@ -20,7 +20,7 @@ function App() {
       {
         isUser
           ? room
-            ? <ChatInterface />
+            ? <ChatInterface room={room} setRoom={setRoom} setIsUser={setIsUser} />
             :
             <div className="center">
               <Room setRoom={setRoom} setIsUser={setIsUser} />
@@ -32,7 +32,6 @@ function App() {
           </div>
       }
 
-      <LogoutButton setRoom={setRoom} setIsUser={setIsUser} />
 
 
 
