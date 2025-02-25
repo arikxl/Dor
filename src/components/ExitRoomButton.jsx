@@ -2,7 +2,7 @@ import React from 'react'
 
 const ExitRoomButton = ({ setRoom }) => {
   return (
-    <button onClick={ ()=>() }>Exit</button>
+    <button onClick={() => (setRoom(null)) }>Exit</button >
   )
 }
 

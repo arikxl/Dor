@@ -37,7 +37,7 @@ button:hover{
 .center{
     height: 100%;
     display: flex;
-    justify-content: ;
+    
     padding-top: 100px;
     align-items: center;
     flex-direction: column;
@@ -87,7 +87,6 @@ header img{
 
 .messages{
     height: 70vh;
-    background-color: red;
     padding: 10px;
 }
 
